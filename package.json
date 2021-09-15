@@ -9,10 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "gulp": "^4.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "gulp": "^4.0.2",
     "gulp-sass": "^5.0.0",
     "node-sass": "^6.0.1",
     "webpack-stream": "^7.0.0"
