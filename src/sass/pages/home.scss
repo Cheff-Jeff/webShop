@@ -1,0 +1,103 @@
+@import '../main.scss';
+.banner{
+  background: $mainBG;
+  display: flex;
+  justify-content: space-between;
+  .imgWrap{
+    width: 20%;
+  }
+  .txtWrap{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1{
+      font-family: $Font;
+      color: $fontColor;
+      letter-spacing: 5px;
+      font-size: 45px;
+      margin-left: -45px;
+    }
+  }
+}
+
+.new{
+  background: $secBG;
+  padding-bottom: 50px;
+  .bigger{
+    max-width: 1325px;
+  }
+  .inner{
+    background: $secBG;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 20px;
+    margin-top: -50px;
+    .comic{
+      display: block;
+      width: 17.5%;
+      transform: scale(1);
+      transition: transform .4s ease-in-out;
+      p{
+        color: $fontColor;
+        font-family: $font2;
+        text-align: center;
+        font-size: 17px;
+        letter-spacing: 1.5px;
+        margin-top: 5px;
+      }
+      &:hover{
+        transform: scale(1.05);
+        transition: transform .4s ease-in-out;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.secbanner{
+  background: $tripBG;
+  .imgWrap{
+    width: 50%;
+  }
+  .txtWrap{
+    width: 50%;
+    h2{
+      font-family: $Font;
+      color: $fontColor;
+      letter-spacing: 5px;
+      font-size: 45px;
+      margin-left: 45px;
+    }
+  }
+}
+
+.popular{
+  background: $tripBG;
+  padding: 20px 80px 50px;
+  .smaller{
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+  .comic{
+    display: block;
+    width: 100%;
+    transform: scale(1);
+    transition: transform .4s ease-in-out;
+    margin-bottom: 20px;
+    p{
+      color: $fontColor;
+      font-family: $font2;
+      text-align: center;
+      font-size: 21px;
+      letter-spacing: 2px;
+      margin-top: 7px;
+    }
+    &:hover{
+      transform: scale(1.05);
+      transition: transform .4s ease-in-out;
+      cursor: pointer;
+    }
+  }
+}

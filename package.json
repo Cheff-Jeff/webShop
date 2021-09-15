@@ -4,16 +4,19 @@
   "description": "webShop",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-sass": "^5.0.0",
     "node-sass": "^6.0.1",
+    "sass": "^1.41.0",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "webpack": "^5.52.1"
   }
 }

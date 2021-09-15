@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const {watch} = require('gulp');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const webpack_stream = require('webpack-stream');
 
 compileCss = ()=> {
@@ -13,15 +13,15 @@ bundleTask = ()=> {
   return webpack_stream({
     entry: {
       home: './src/javaScript/pages/home.js',
-      about: './src/javaScript/pages/about.js',
-      skills: './src/javaScript/pages/skills.js',
-      services: './src/javaScript/pages/services.js',
-      projects: './src/javaScript/pages/projects.js',
-      contact: './src/javaScript/pages/contact.js',
-      thanks: './src/javaScript/pages/thanks.js',
-      privacy: './src/javaScript/pages/privacy.js',
-      cookies: './src/javaScript/pages/cookies.js',
-      404: './src/javaScript/errors/404.js',
+      // about: './src/javaScript/pages/about.js',
+      // skills: './src/javaScript/pages/skills.js',
+      // services: './src/javaScript/pages/services.js',
+      // projects: './src/javaScript/pages/projects.js',
+      // contact: './src/javaScript/pages/contact.js',
+      // thanks: './src/javaScript/pages/thanks.js',
+      // privacy: './src/javaScript/pages/privacy.js',
+      // cookies: './src/javaScript/pages/cookies.js',
+      // 404: './src/javaScript/errors/404.js',
     },
     mode: 'production',
     output: {

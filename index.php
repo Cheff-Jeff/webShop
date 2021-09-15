@@ -1,17 +1,17 @@
 <?php
-// session_start();
-// include_once('config.php');
+session_start();
+include_once('config.php');
 $request = $_SERVER['REQUEST_URI'];
 
-// if(strpos($request, '/') !== false){
-//     $request = str_replace('//','/', $request);
-// }
+if(strpos($request, '/') !== false){
+    $request = str_replace('//','/', $request);
+}
 
-// $ua = htmlentities($_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8');
-// if (preg_match('~MSIE|Internet Explorer~i', $ua) || (strpos($ua, 'Trident/7.0; rv:11.0') !== false)) {
-//     require __DIR__ . '/pages/errors/ie.html';
-//     die();
-// }
+$ua = htmlentities($_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8');
+if (preg_match('~MSIE|Internet Explorer~i', $ua) || (strpos($ua, 'Trident/7.0; rv:11.0') !== false)) {
+    require __DIR__ . '/pages/errors/ie.html';
+    die();
+}
 
 // if(empty($_SESSION['menu'])){
 //     include_once($root."/src/php/functions/getMenu.php");
@@ -20,9 +20,9 @@ $request = $_SERVER['REQUEST_URI'];
 
 // $menuItems = $_SESSION['menu'];
 
-// if(strpos($request, '?fbclid')){
-//     $request = substr($request, 0, strpos($request, "?fbclid"));
-// }
+if(strpos($request, '?fbclid')){
+    $request = substr($request, 0, strpos($request, "?fbclid"));
+}
 
 // foreach($menuItems as $menuItem){
 //     if($request == $menuItem['Link']){
