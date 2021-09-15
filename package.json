@@ -1,0 +1,20 @@
+{
+  "name": "webShop",
+  "version": "1.0.0",
+  "description": "webShop",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  },
+  "devDependencies": {
+    "gulp-sass": "^5.0.0",
+    "node-sass": "^6.0.1",
+    "webpack-stream": "^7.0.0"
+  }
+}
