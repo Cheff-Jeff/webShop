@@ -17,24 +17,26 @@ if (preg_match('~MSIE|Internet Explorer~i', $ua) || (strpos($ua, 'Trident/7.0; r
 //     include_once($root."/src/php/functions/getMenu.php");
 //     GetMenu($host, $api, $root);          
 // }
+include_once($root."/src/php/functions/getMenu.php");
+GetMenu($host, $api, $root);    
 
-// $menuItems = $_SESSION['menu'];
+$menuItems = $_SESSION['menu'];
 
 if(strpos($request, '?fbclid')){
     $request = substr($request, 0, strpos($request, "?fbclid"));
 }
 
-// foreach($menuItems as $menuItem){
-//     if($request == $menuItem['Link']){
-//         if(!function_exists('getData')){
-//             include_once($root."/src/php/functions/dataLoader.php");
-//         }
-//         $template = getData($menuItem['templateIpa']);
-//         $template = $template[0]['acf']['template'];
-//         require __DIR__ . '/pages/'.$template;
-//         die();
-//     }
-// }
+foreach($menuItems as $menuItem){
+    if($request == $menuItem['Link']){
+        if(!function_exists('getData')){
+            include_once($root."/src/php/functions/dataLoader.php");
+        }
+        $template = getData($menuItem['templateIpa']);
+        $template = $template[0]['acf']['template'];
+        require __DIR__ . '/pages/'.$template;
+        die();
+    }
+}
 
 switch ($request) {
     case '/' :

@@ -1,16 +1,15 @@
 <?php
-  // include_once($root.'/src/php/functions/popupLoader.php');
-  // if(!empty($_SESSION['menu'])){
-  //   $menuItems = $_SESSION['menu'];
-  // }
-  // else{
-  //   include_once($root."/src/php/functions/getMenu.php");
-  //   GetMenu($host, $api, $root);
-  //   $menuItems = $_SESSION['menu'];
-  // }
-  // if(!empty($_SESSION['subMenu'])){
-  //   $subMenuItems = $_SESSION['subMenu'];
-  // }
+  if(!empty($_SESSION['menu'])){
+    $menuItems = $_SESSION['menu'];
+  }
+  else{
+    include_once($root."/src/php/functions/getMenu.php");
+    GetMenu($host, $api, $root);
+    $menuItems = $_SESSION['menu'];
+  }
+  if(!empty($_SESSION['subMenu'])){
+    $subMenuItems = $_SESSION['subMenu'];
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,4 +51,23 @@
 </head>
 <body>
 <header>
+  <div class="menu">
+    <div class="logo">
+      <a href="/">
+        <img src="/src/img/logo.png" alt="logo">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <?php foreach($menuItems as $menuItem):?>
+          <li 
+            class="<?php if($Page == $menuItem['Name']){echo 'active';}?>">
+            <a href="<?=$menuItem['Link']?>">
+              <span><?=$menuItem['Name']?></span>
+            </a>
+          </li>  
+        <?php endforeach; ?>
+      </ul>
+    </nav>
+  </div>
 </header>

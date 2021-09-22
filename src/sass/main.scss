@@ -5,3 +5,30 @@ img{
     height: auto;
     display: block;
 }
+
+.menu{
+    display: flex;
+    width: 100%;
+    position: fixed;
+    background: $gradiand;
+    .logo{
+        max-width: 150px;
+    }
+    nav{
+        ul{
+            list-style: none;
+            display: flex;
+            li{
+                &.active{
+                    span{
+                        color: $red;
+                    }
+                }
+                span{
+                    color: $fontColor;
+                    font-family: $font2;
+                }
+            }
+        }
+    }
+}

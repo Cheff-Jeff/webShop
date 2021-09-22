@@ -35,13 +35,13 @@ function remove_menus(){
     remove_menu_page( 'edit.php?post_type=page' );    //Pages
     remove_menu_page( 'edit-comments.php' );          //Comments
     remove_menu_page( 'themes.php' );                 //Appearance
-    remove_menu_page( 'plugins.php' );                //Plugins
+    //remove_menu_page( 'plugins.php' );                //Plugins
     remove_menu_page( 'tools.php' );                  //Tools
-    remove_menu_page( 'options-general.php' );        //Settings
+  //  remove_menu_page( 'options-general.php' );        //Settings
     remove_menu_page( 'smush' );
-    remove_menu_page( 'edit.php?post_type=acf-field-group' ); //custom posttype
+    //remove_menu_page( 'edit.php?post_type=acf-field-group' ); //custom posttype
 }
-remove_action( 'admin_menu', 'cptui_plugin_menu' ); //custom fieldtype
+//remove_action( 'admin_menu', 'cptui_plugin_menu' ); //custom fieldtype
 add_action( 'admin_menu', 'remove_menus' );
 
 add_action('admin_menu', 'change_menus_position');
@@ -91,37 +91,7 @@ function get_img_url() {
             'schema'          => null,
         )
     );
-    register_rest_field( 'about', 'imageURL', array(
-            'get_callback'    => 'get_original_images_urls',
-            'update_callback' => null,
-            'schema'          => null,
-        )
-    );
-    register_rest_field( 'skills', 'imageURL', array(
-            'get_callback'    => 'get_original_images_urls',
-            'update_callback' => null,
-            'schema'          => null,
-        )
-    );
-    register_rest_field( 'services', 'imageURL', array(
-            'get_callback'    => 'get_original_images_urls',
-            'update_callback' => null,
-            'schema'          => null,
-        )
-    );
-    register_rest_field( 'contact', 'imageURL', array(
-            'get_callback'    => 'get_original_images_urls',
-            'update_callback' => null,
-            'schema'          => null,
-        )
-    );
-    register_rest_field( 'thanks', 'imageURL', array(
-            'get_callback'    => 'get_original_images_urls',
-            'update_callback' => null,
-            'schema'          => null,
-        )
-    );
-    register_rest_field( '404', 'imageURL', array(
+    register_rest_field( 'products', 'imageURL', array(
             'get_callback'    => 'get_original_images_urls',
             'update_callback' => null,
             'schema'          => null,
@@ -141,15 +111,11 @@ function get_original_images_urls( $object, $field_name, $request ) {
 
 //get menu with rest api
 function get_nav_menus() {
-    return wp_get_nav_menu_items('Main Navigation');
-}
-function get_nl_nav_menus() {
-    return wp_get_nav_menu_items('NL Navigation');
+    return wp_get_nav_menu_items('main');
 }
 function get_menus(){
     $menus = array();
     $menus['menu'] = get_nav_menus();
-    $menus['menuNl'] = get_nl_nav_menus();
     return $menus;
 }
 
@@ -157,13 +123,5 @@ add_action( 'rest_api_init', function () {
     register_rest_route( 'wp/v2', 'menu', array(
         'methods' => 'GET',
         'callback' => 'get_nav_menus',
-    ));
-    register_rest_route( 'wp/v2', 'menunl', array(
-        'methods' => 'GET',
-        'callback' => 'get_nl_nav_menus',
-    ));
-    register_rest_route( 'wp/v2', 'menuAll', array(
-        'methods' => 'GET',
-        'callback' => 'get_menus',
     ));
 } );

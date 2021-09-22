@@ -10,10 +10,10 @@
 ?>
 <section class="banner">
     <div class="imgWrap">
-        <img src="/src/img/banner.PNG" alt="banner image">
+        <img src="<?=$img1?>" alt="banner image">
     </div>
     <div class="txtWrap">
-        <h1>What's new this week?</h1>
+        <h1><?=$txt1?></h1>
     </div>
 </section>
 <section class="new">
@@ -21,26 +21,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="inner">
-                    <div class="comic">
-                        <img src="/src/img/ironman.jpg">
-                        <p>Iron Man Annual (2021)#1</p>
-                    </div>
-                    <div class="comic">
-                        <img src="/src/img/ironman.jpg">
-                        <p>Iron Man Annual (2021)#1</p>
-                    </div>
-                    <div class="comic">
-                        <img src="/src/img/ironman.jpg">
-                        <p>Iron Man Annual (2021)#1</p>
-                    </div>
-                    <div class="comic">
-                        <img src="/src/img/ironman.jpg">
-                        <p>Iron Man Annual (2021)#1</p>
-                    </div>
-                    <div class="comic">
-                        <img src="/src/img/ironman.jpg">
-                        <p>Iron Man Annual (2021)#1</p>
-                    </div>
+                    <?php foreach($newComics as $newComic):?>
+                        <div class="comic">
+                            <img src="<?=$newComic['imageURL']['large']?>">
+                            <p><?=$newComic['title']['rendered']?></p>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
@@ -48,75 +34,23 @@
 </section>
 <section class="secbanner banner">
     <div class="txtWrap">
-        <h2>Popular comis this month.</h2>
+        <h2><?=$txt2?></h2>
     </div>
     <div class="imgWrap">
-        <img src="/src/img/secBanner.png">
+        <img src="<?=$img2?>">
     </div>
 </section>
 <section class="popular">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 smaller">
-                <div class="comic">
-                    <img src="/src/img/ironman.jpg">
-                    <p>Iron Man Annual <br/> (2021)#1</p>
+            <?php foreach($popComics as $popComic):?>
+                <div class="col-md-3 smaller">
+                    <div class="comic">
+                        <img src="<?=$popComic['imageURL']['large']?>">
+                        <p><?=$popComic['title']['rendered']?></p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 smaller">
-                <div class="comic">
-                    <img src="/src/img/ironman.jpg">
-                    <p>Iron Man Annual <br/> (2021)#1</p>
-                </div>
-            </div>
-            <div class="col-md-3 smaller">
-                <div class="comic">
-                    <img src="/src/img/ironman.jpg">
-                    <p>Iron Man Annual <br/> (2021)#1</p>
-                </div>
-            </div>
-            <div class="col-md-3 smaller">
-                <div class="comic">
-                    <img src="/src/img/ironman.jpg">
-                    <p>Iron Man Annual <br/> (2021)#1</p>
-                </div>
-            </div>
-            <div class="col-md-3 smaller">
-                <div class="comic">
-                    <img src="/src/img/ironman.jpg">
-                    <p>Iron Man Annual <br/> (2021)#1</p>
-                </div>
-            </div>
-            <div class="col-md-3 smaller">
-                <div class="comic">
-                    <img src="/src/img/ironman.jpg">
-                    <p>Iron Man Annual <br/> (2021)#1</p>
-                </div>
-            </div>
-            <div class="col-md-3 smaller">
-                <div class="comic">
-                    <img src="/src/img/ironman.jpg">
-                    <p>Iron Man Annual <br/> (2021)#1</p>
-                </div>
-            </div>
-            <div class="col-md-3 smaller">
-                <div class="comic">
-                    <img src="/src/img/ironman.jpg">
-                    <p>Iron Man Annual <br/> (2021)#1</p>
-                </div>
-            </div>
-            <div class="col-md-3 smaller">
-                <div class="comic">
-                    <img src="/src/img/ironman.jpg">
-                    <p>Iron Man Annual <br/> (2021)#1</p>
-                </div>
-            </div>
-            <div class="col-md-3 smaller">
-                <div class="comic">
-                    <img src="/src/img/ironman.jpg">
-                    <p>Iron Man Annual <br/> (2021)#1</p>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
