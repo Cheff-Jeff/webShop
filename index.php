@@ -26,6 +26,11 @@ if(strpos($request, '?fbclid')){
     $request = substr($request, 0, strpos($request, "?fbclid"));
 }
 
+if(strpos($request, 'comic/')){
+    require __DIR__ . '/pages/comic.php';
+    die();
+}
+
 foreach($menuItems as $menuItem){
     if($request == $menuItem['Link']){
         if(!function_exists('getData')){
