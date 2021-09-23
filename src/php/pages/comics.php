@@ -14,10 +14,10 @@ for($i = 0; $i < count($data); $i++){
         // case 'page-description':
         //     $pageDescription = strip_tags($data[$i]['content']['rendered']);
         //     break;
-        // case 'whats-new-this-week':
-        //     $txt1 = $data[$i]['title']['rendered'];
-        //     $img1 = $data[$i]['imageURL']['large'];
-        //     break;
+        case 'browse-comics':
+            $txt1 = $data[$i]['title']['rendered'];
+            $img1 = $data[$i]['imageURL']['large'];
+            break;
         // case 'popular-comis-this-month':
         //     $txt2 = $data[$i]['title']['rendered'];
         //     $img2 = $data[$i]['imageURL']['large'];

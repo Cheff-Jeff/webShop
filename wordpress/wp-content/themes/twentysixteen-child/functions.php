@@ -91,6 +91,12 @@ function get_img_url() {
             'schema'          => null,
         )
     );
+    register_rest_field( 'comics', 'imageURL', array(
+            'get_callback'    => 'get_original_images_urls',
+            'update_callback' => null,
+            'schema'          => null,
+        )
+    );
     register_rest_field( 'products', 'imageURL', array(
             'get_callback'    => 'get_original_images_urls',
             'update_callback' => null,
