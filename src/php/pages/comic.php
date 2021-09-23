@@ -11,3 +11,4 @@ $comic = getData($link);
 
 $img1 = $comic[0]['imageURL']['large'];
 $txt1 = $comic[0]['title']['rendered'];
+$id = $comic[0]['id'];

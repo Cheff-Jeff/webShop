@@ -13,15 +13,7 @@ bundleTask = ()=> {
   return webpack_stream({
     entry: {
       home: './src/javaScript/pages/home.js',
-      // about: './src/javaScript/pages/about.js',
-      // skills: './src/javaScript/pages/skills.js',
-      // services: './src/javaScript/pages/services.js',
-      // projects: './src/javaScript/pages/projects.js',
-      // contact: './src/javaScript/pages/contact.js',
-      // thanks: './src/javaScript/pages/thanks.js',
-      // privacy: './src/javaScript/pages/privacy.js',
-      // cookies: './src/javaScript/pages/cookies.js',
-      // 404: './src/javaScript/errors/404.js',
+      comic: './src/javaScript/pages/comic.js',
     },
     mode: 'production',
     output: {

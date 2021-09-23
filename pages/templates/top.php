@@ -69,5 +69,8 @@
         <?php endforeach; ?>
       </ul>
     </nav>
+    <div class="cardIcon">
+      <img src="/src/img/card.jpg">
+    </div>
   </div>
 </header>

@@ -1,8 +1,9 @@
-<?php
-    // include_once($root."/src/php/components/footer.php");
-?>
 <footer>
-    
+    <div class="inner">
+        <a href="/">Home</a>
+        <img src="/src/img/logo.png" alt="logo">
+        <a href="/comics">Comics</a>
+    </div>
 </footer>
 </body>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>

@@ -6,29 +6,91 @@ img{
     display: block;
 }
 
+a{
+    text-decoration: none !important;
+}
+
+body{
+    background: $tripBG !important;
+}
+
 .menu{
     display: flex;
     width: 100%;
     position: fixed;
     background: $gradiand;
+    z-index: 999;
+    padding: 10px 20px;
     .logo{
         max-width: 150px;
     }
     nav{
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 50px;
         ul{
             list-style: none;
             display: flex;
+            padding-left: 0;
+            margin: 0;
             li{
                 &.active{
                     span{
                         color: $red;
                     }
                 }
-                span{
-                    color: $fontColor;
-                    font-family: $font2;
+                &:hover{
+                    span{
+                        color: $red;
+                        transition: color .4s ease-in-out;
+                    }
+                }
+                a{
+                    text-decoration: none !important;
+                    span{
+                        color: $fontColor;
+                        font-family: $font2;
+                        font-size: 25px;
+                        letter-spacing: 1.5px;
+                        margin: 0 10px;
+                        transition: color .4s ease-in-out;
+                    }
                 }
             }
+        }
+    }
+    .cardIcon{
+        max-width: 40px;
+        float: right;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+}
+
+footer{
+    background: rgba(0,0,0,0);
+    display: flex !important;
+    justify-content: center;
+    padding-bottom: 20px;
+    .inner{
+        display: flex;
+        align-items: center;
+        a{
+            text-decoration: none;
+            color: $fontColor;
+            font-size: 30px;
+            letter-spacing: 1.7px;
+            margin: 0;
+            transition: color .4s ease-in-out;
+            &:hover{
+                color: $red;
+                transition: color .4s ease-in-out;
+            }
+        }
+        img{
+            max-width: 250px;
+            margin: 0 40px;
         }
     }
 }

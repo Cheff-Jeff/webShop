@@ -23,8 +23,10 @@
                 <div class="inner">
                     <?php foreach($newComics as $newComic):?>
                         <div class="comic">
-                            <img src="<?=$newComic['imageURL']['large']?>">
-                            <p><?=$newComic['title']['rendered']?></p>
+                            <a href="/comic/<?=$newComic['slug']?>">
+                                <img src="<?=$newComic['imageURL']['large']?>">
+                                <p><?=$newComic['title']['rendered']?></p>
+                            </a>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -46,8 +48,10 @@
             <?php foreach($popComics as $popComic):?>
                 <div class="col-md-3 smaller">
                     <div class="comic">
-                        <img src="<?=$popComic['imageURL']['large']?>">
-                        <p><?=$popComic['title']['rendered']?></p>
+                        <a href="/comic/<?=$popComic['slug']?>">
+                            <img src="<?=$popComic['imageURL']['large']?>">
+                            <p><?=$popComic['title']['rendered']?></p>
+                        </a>
                     </div>
                 </div>
             <?php endforeach; ?>

@@ -1,0 +1,1 @@
+(()=>{const n=$(".comic")[0].id;$("#btnAddToCard").click((function(n){n.preventDefault(),o()}));const o=()=>{const o=new XMLHttpRequest;o.open("GET","/src/php/functions/cardItems.php?id="+n+"&amount=1",!0),o.onload=function(){console.log(this.responseText)},o.send()}})();
