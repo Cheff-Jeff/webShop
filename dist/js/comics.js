@@ -1,0 +1,1 @@
+$(document).ready((function(){$(".titleWrap").click((function(){$(this).children(".icon").toggleClass("open");let t=$(this).siblings(".sub-option");t.toggleClass("open"),0==t.height()?(curHeight=t.height(),autoHeight=t.css("height","auto").height(),t.height(curHeight).animate({height:autoHeight},200)):t.animate({height:0},200)}))}));
