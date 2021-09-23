@@ -32,6 +32,11 @@
       flex: 0 0 20%;
       max-width: 20%;
     }
+    .close{
+      width: 0px;
+      height: 0px;
+      overflow: hidden;
+    }
     .comic{
       margin: 0 0 80px;
       transition: transform .3s ease-in-out;

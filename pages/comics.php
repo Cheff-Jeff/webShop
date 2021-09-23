@@ -37,7 +37,9 @@
                                                     <label class="checkBox">
                                                         <p><?=$Categorie['name']?></p>
                                                         <input type="checkbox">
-                                                        <span class="checkmark"></span>
+                                                        <span class="checkmark">
+                                                            <img src="/src/img/check.png" alt="check">
+                                                        </span>
                                                     </label>
                                                 </li>    
                                             <?php endif; ?>
@@ -53,7 +55,16 @@
                 <div class="inner">
                     <div class="row">
                         <?php foreach($Comics as $comic): ?>
-                            <div class="col-md-3 smaller">
+                            <div class="col-md-3 smaller comicWrap <?php foreach($comic['categoryName'] as $cat){
+                                if(strpos($cat['name'], ' ') !== false) {
+                                    echo str_replace(' ', '-', $cat['name']);
+                                    echo ' ';
+                                }
+                                else{
+                                    echo $cat['name'];
+                                    echo ' ';
+                                }
+                            } ?>">
                                 <div class="comic">
                                     <a href="/comic/<?=$comic['slug']?>">
                                         <img src="<?=$comic['imageURL']['large']?>">

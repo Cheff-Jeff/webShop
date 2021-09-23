@@ -14,4 +14,17 @@ $(document).ready(function() {
       elm.animate({height: 0}, 200)
     }
   });
+
+  $('.checkBox').click(function() {
+    let cat = $(this).find('p');
+    cat = cat.html();
+    $('.comicWrap').each(function(){
+      if($(this).hasClass(cat)){
+        $(this).addClass('active');
+      }
+      else{
+        $(this).addClass('close');
+      }
+    });
+  })
 });

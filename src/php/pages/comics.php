@@ -32,5 +32,5 @@ $Comics = getData($link);
 $link = $api."categories?parent=0";
 $parentCategories = getData($link);
 
-$link = $api."categories";
+$link = $api."categories?per_page=100";
 $Categories = getData($link);
