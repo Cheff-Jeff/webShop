@@ -60,6 +60,10 @@ switch ($request) {
         require __DIR__ . '/pages/home.php';
         die();
         break;
+    case '/card' :
+        require __DIR__ . '/pages/card.php';
+        die();
+        break;
     case '/wp' :
         require __DIR__ . '/wordpress/wp-login.php';
         die();
