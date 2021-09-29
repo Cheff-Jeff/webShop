@@ -1,32 +1,50 @@
 <?php
 if(isset($_GET))
 {
-    if(isset($_COOKIE['cardItems']))
+    session_start();
+    if(isset($_SESSION['cardAmount']))
     {
-        $cookie = (array) json_decode($_COOKIE['cardItems']);
-        $item = array_merge($_GET, $cookie);
+        $_SESSION['cardAmount'] += $_GET['amount'];
     }
     else
     {
-        $item = $_GET;
+        $_SESSION['cardAmount'] = $_GET['amount'];
     }
-    var_dump($item);
-    // else
-    // {
-    //     $cookieString = '';
-    // }
-    // for($i = 0; $i < 2; $i++)
-    // {
-    //     if($i == 0)
-    //     {
-    //         $cookieString = $cookieString.'id:'.$item['id'].',';
-    //     }
-    //     else
-    //     {
-    //         $cookieString = $cookieString.'amount:'.$item['amount'].',';
-    //     }
-    // }
-    // $cookieString = $cookieString.'|';
+
+    if(isset($_COOKIE['cardItems']))
+    {
+        $cookie = json_decode($_COOKIE['cardItems'], true);
+        $cookieExist = false;
+
+        for($i = 0; $i < count($cookie); $i++)
+        {
+            if($cookie[$i]['id'] == $_GET['id'])
+            {
+                $cookie[$i]['amount'] = intval($cookie[$i]['amount']) + intval($_GET['amount']);
+                $cookie[$i]['amount'] = strval($cookie[$i]['amount']);
+                $cookieExist = true;
+            }
+        }
+
+        if(!$cookieExist)
+        {
+            $newItem[] = $_GET;
+            $item = array_merge($newItem, $cookie);
+            setCoockie($item);
+        }
+        else
+        {
+            setCoockie($cookie);
+        }
+    }
+    else
+    {
+        $item[] = $_GET;
+        setCoockie($item);
+    }
+}
+
+function setCoockie($item)
+{
     setcookie('cardItems', json_encode($item), time() + (86400 * 30), "/"); // 86400 = 1 day
-    // var_dump($cookieString);
 }

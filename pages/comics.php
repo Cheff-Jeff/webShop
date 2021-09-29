@@ -20,13 +20,51 @@
     <div class="container-fluid lesser">
         <div class="row">
             <div class="col-md-3">
-                
+                <div class="filter">
+                    <h2><?=$txt2?></h2>
+                    <?php foreach($parentCategories as $parentCategorie): ?>
+                        <?php if($parentCategorie['slug'] != 'geen-categorie'): ?>
+                            <div class="option">
+                                <div class="titleWrap">
+                                    <p class="title"><?=$parentCategorie['name']?></p>
+                                    <span class="icon"></span>
+                                </div>
+                                <div class="sub-option">
+                                    <ul>
+                                        <?php foreach($Categories as $Categorie): ?>
+                                            <?php if($Categorie['parent'] == $parentCategorie['id']): ?>
+                                                <li>
+                                                    <label class="checkBox">
+                                                        <p><?=$Categorie['name']?></p>
+                                                        <input type="checkbox">
+                                                        <span class="checkmark">
+                                                            <img src="/src/img/check.png" alt="check">
+                                                        </span>
+                                                    </label>
+                                                </li>    
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        <?php endif ?>
+                    <?php endforeach; ?>
+                </div>
             </div>
             <div class="col-md-9">
                 <div class="inner">
                     <div class="row">
                         <?php foreach($Comics as $comic): ?>
-                            <div class="col-md-3 smaller">
+                            <div class="col-md-3 smaller comicWrap <?php foreach($comic['categoryName'] as $cat){
+                                if(strpos($cat['name'], ' ') !== false) {
+                                    echo str_replace(' ', '-', $cat['name']);
+                                    echo ' ';
+                                }
+                                else{
+                                    echo $cat['name'];
+                                    echo ' ';
+                                }
+                            } ?>">
                                 <div class="comic">
                                     <a href="/comic/<?=$comic['slug']?>">
                                         <img src="<?=$comic['imageURL']['large']?>">

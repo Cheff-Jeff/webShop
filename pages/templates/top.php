@@ -10,6 +10,9 @@
   if(!empty($_SESSION['subMenu'])){
     $subMenuItems = $_SESSION['subMenu'];
   }
+  if(isset($_SESSION['cardAmount'])){
+    $cardAmount = $_SESSION['cardAmount'];
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +73,14 @@
       </ul>
     </nav>
     <div class="cardIcon">
-      <img src="/src/img/card.jpg">
+      <a href="/card">
+        <?php if(isset($cardAmount)): ?>
+          <span id="cardAmount"><?=$cardAmount?></span>
+        <?php else: ?>
+          <span id="cardAmount"></span>
+        <?php endif; ?>
+        <img src="/src/img/card.jpg">
+      </a>
     </div>
   </div>
 </header>

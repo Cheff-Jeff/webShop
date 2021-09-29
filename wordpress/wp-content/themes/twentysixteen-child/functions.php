@@ -76,7 +76,7 @@ function pages_redirect() {
 }
 
 function get_category_name() {
-    register_rest_field('project', 'categoryName', array(
+    register_rest_field('products', 'categoryName', array(
         'get_callback' => function() {
             return get_the_category();
         }

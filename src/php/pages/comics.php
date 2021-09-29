@@ -18,10 +18,9 @@ for($i = 0; $i < count($data); $i++){
             $txt1 = $data[$i]['title']['rendered'];
             $img1 = $data[$i]['imageURL']['large'];
             break;
-        // case 'popular-comis-this-month':
-        //     $txt2 = $data[$i]['title']['rendered'];
-        //     $img2 = $data[$i]['imageURL']['large'];
-        //     break;
+        case 'filters':
+            $txt2 = $data[$i]['title']['rendered'];
+            break;
         default:
             break;
     }
@@ -29,3 +28,9 @@ for($i = 0; $i < count($data); $i++){
 
 $link = $api."products?per_page=100";
 $Comics = getData($link);
+
+$link = $api."categories?parent=0";
+$parentCategories = getData($link);
+
+$link = $api."categories?per_page=100";
+$Categories = getData($link);
