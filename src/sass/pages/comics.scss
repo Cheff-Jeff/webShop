@@ -33,9 +33,17 @@
       max-width: 20%;
     }
     .close{
+      padding: 0px;
+      flex: 0 0 0%;
       width: 0px;
       height: 0px;
+      max-width: 0px;
+      max-height: 0px;
       overflow: hidden;
+      transition: all .3s ease-in-out;
+    }
+    .active{
+      transition: all .3s ease-in-out;
     }
     .comic{
       margin: 0 0 80px;

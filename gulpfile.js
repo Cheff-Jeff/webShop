@@ -15,6 +15,7 @@ bundleTask = ()=> {
       home: './src/javaScript/pages/home.js',
       comics: './src/javaScript/pages/comics.js',
       comic: './src/javaScript/pages/comic.js',
+      checkout: './src/javaScript/pages/checkout.js',
     },
     mode: 'production',
     output: {
