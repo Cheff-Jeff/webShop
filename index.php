@@ -59,6 +59,9 @@ switch ($request) {
     case '/card' :
         require __DIR__ . '/pages/card.php';
         die();
+    case '/order' :
+        require __DIR__ . '/pages/order.php';
+        die();
     case '/checkout' :
         require __DIR__ . '/pages/checkout.php';
         die();
