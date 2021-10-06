@@ -1,2 +1,58 @@
 @import '../main.scss';
 @import '../buttons.scss';
+.banner{
+  background: $mainBG;
+  display: flex;
+  justify-content: space-between;
+  .imgWrap{
+    width: 50%;
+  }
+  .txtWrap{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1{
+      font-family: $Font;
+      color: $fontColor;
+      letter-spacing: 5px;
+      font-size: 45px;
+      margin-left: 45px;
+    }
+  }
+}
+
+.content{
+  position: relative;
+  .background{
+    opacity: 0.25;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 50%;
+    width: 100%;
+    min-height: 600px;
+    max-height: 600px;
+    overflow: hidden;
+  }
+  .comic{
+    margin-top: -25%;
+    .info{
+      margin-left: 40px;
+      h2{
+        font-family: $font2;
+        color: $fontColor;
+        letter-spacing: 3px;
+        font-size: 33px;
+      }
+      .info-block{
+        p{
+          font-family: $font2;
+          color: $fontColor;
+          letter-spacing: 1px;
+          font-size: 18px;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
