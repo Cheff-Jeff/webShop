@@ -15,10 +15,11 @@ $(document).ready(function() {
     }
   });
 
-  $('.checkBox').click(function() {
+  $('.checkBox').click(function(e) {
     let cat = $(this).find('p');
     cat = cat.html();
     let filterArr = [];
+
     $('.checkBox').each(function() {
       const box = $(this);
       if($(this).find('input').is(":checked"))
@@ -40,17 +41,32 @@ $(document).ready(function() {
     });
     //https://www.w3schools.com/js/tryit.asp?filename=tryjs_ajax_post2
     //https://stackoverflow.com/questions/9001526/send-array-with-ajax-to-php-script
-    // console.log(filterArr);
-    // console.log("_____________");
-    if($(this).find('input').is(":checked")){
-      $('.comicWrap').each(function(){
-        if($(this).hasClass(cat)){
-          $(this).addClass('active');
-        }
-        else{
-          $(this).addClass('close');
-        }
-      });
-    }
+    // if($(this).find('input').is(":checked")){
+    //   $('.comicWrap').each(function(){
+    //     if($(this).hasClass(cat)){
+    //       $(this).addClass('active');
+    //     }
+    //     else{
+    //       $(this).addClass('close');
+    //     }
+    //   });
+    // }
+    filterComics(filterArr);
   })
 });
+
+const filterComics = (filterArr) => {
+  if(filterArr.length > 0)
+  {
+    console.log(filterArr);
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/src/php/functions/flterComics.php', true);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onload = function()
+    {
+      console.log(this.responseText);
+    }
+    xhr.send(JSON.stringify(filterArr));
+  }
+}
