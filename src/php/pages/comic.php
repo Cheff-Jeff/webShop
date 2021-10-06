@@ -18,48 +18,17 @@ $id = $comic[0]['id'];
 $writer = $comic[0]['acf']['writer'];
 $price = str_replace('.',',',$comic[0]['acf']['price']);
 $bundel = $comic[0]['acf']['bundel'];
-$Publisher;
-$title;
+$Publisher = '';
+$title = 'Comic';
 
-$catParent;
-$pubCat;
-$first = false;
-$second = false;
 foreach($comic[0]['categoryName'] as $cat)
 {
-    if($cat['slug'] == 'characters')
-    {
-        $catParent = $cat['cat_ID'];
-        $first = true;
-    }
-    else if($cat['slug'] == 'publisher')
-    {
-        $pubCat = $cat['cat_ID'];
-        $second = true;
-    }
-    if($first && $second)
-    {
-        $first = false;
-        $second = false;
-        break;
-    }
-}
-foreach($comic[0]['categoryName'] as $cat)
-{
-    if($cat['category_parent'] == $catParent)
+    if($cat['category_parent'] == 13)
     {
         $title = $cat['cat_name'];
-        $first = true;
     }
-    else if($cat['category_parent'] == $pubCat)
+    else if($cat['category_parent'] == 14)
     {
         $Publisher = $cat['cat_name'];
-        $second = true;
-    }
-    if($first && $second)
-    {
-        $first = false;
-        $second = false;
-        break;
     }
 }

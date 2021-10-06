@@ -29,24 +29,29 @@
                 </div>
                 <div class="col-md-7">
                     <div class="info">
-                        <h2><?=$txt1?></h2>
-                        <div class="info-block">
-                            <p>Writer:</p>
-                            <p><?=$writer?></p>
+                        <div class="wrap">
+                            <h2><?=$txt1?></h2>
+                            <div class="info-block">
+                                <p>Writer:</p>
+                                <p><?=$writer?></p>
+                            </div>
+                            <div class="info-block">
+                                <p>Publisher:</p>
+                                <p><?=$Publisher?></p>
+                            </div>
+                            <div class="info-block">
+                                <p>Bundel:</p>
+                                <p><?=$bundel?></p>
+                            </div>
+                            <div class="info-block">
+                                <p>Price:</p>
+                                <p>&euro; <?=$price?></p>
+                            </div>
                         </div>
-                        <div class="info-block">
-                            <p>Publisher:</p>
-                            <p><?=$Publisher?></p>
+                        <div class="placeOrder">
+                            <input type="number" id="anount" value="1">
+                            <a id="btnAddToCard" class="main-btn" href="#">add to card</a>
                         </div>
-                        <div class="info-block">
-                            <p>Bundel:</p>
-                            <p><?=$bundel?></p>
-                        </div>
-                        <div class="info-block">
-                            <p>Price:</p>
-                            <p><?=$price?></p>
-                        </div>
-                        <a id="btnAddToCard" href="#">add to card</a>
                     </div>
                 </div>
                 <div class="col-md-12">

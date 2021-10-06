@@ -1,9 +1,15 @@
-const id = $('.comic')[0]['id']
+const id = $('.comic')[0]['id'];
+const re = /^[0-9]*$/;
 let amount = 1;
 
 $('#btnAddToCard').click(function(e)
 {
   e.preventDefault();
+  amount = $('#anount').val();
+  if(amount == '' || !re.test(amount))
+  {
+    amount = 1;
+  }
   addCardItems(amount);
 });
 

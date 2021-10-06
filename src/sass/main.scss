@@ -60,7 +60,6 @@ body{
         }
     }
     .cardIcon{
-        max-width: 40px;
         float: right;
         display: flex;
         align-items: center;
@@ -74,6 +73,9 @@ body{
                 font-size: 20px;
                 margin-right: 10px;
             }
+        }
+        img{
+            max-width: 40px;
         }
     }
 }
