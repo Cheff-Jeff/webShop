@@ -13,6 +13,16 @@
   if(isset($_SESSION['cardAmount'])){
     $cardAmount = $_SESSION['cardAmount'];
   }
+  if(!isset($_SESSION['cardAmount']) && isset($_COOKIE['cardItems']))
+  {
+    $cardAmount = 0;
+    $cookies = json_decode($_COOKIE['cardItems'], true);
+    foreach($cookies as $cookie)
+    {
+      $cardAmount = $cardAmount + $cookie['amount'];
+    }
+    $_SESSION['cardAmount'] = $cardAmount;
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

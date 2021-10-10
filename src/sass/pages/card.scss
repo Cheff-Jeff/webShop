@@ -1,6 +1,59 @@
 @import '../main.scss';
 @import '../buttons.scss';
-
+.banner{
+  background: $mainBG;
+  display: flex;
+  justify-content: space-between;
+  .imgWrap{
+    width: 50%;
+  }
+  .txtWrap{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1{
+      font-family: $Font;
+      color: $fontColor;
+      letter-spacing: 5px;
+      font-size: 45px;
+      margin-left: 45px;
+    }
+  }
+}
+.items{
+  .smaller{
+    width: 90%;
+  }
+  .comic{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .img-wrap{
+      width: 150px;
+    }
+    .details{
+      p{
+        &.title{
+          letter-spacing: 2px;
+          font-size: 20px;
+        }
+        font-family: $font2;
+        color: $fontColor;
+        letter-spacing: 2px;
+        font-size: 18px;
+      }
+    }
+    .amount,.price{
+      p{
+        font-family: $font2;
+        color: $fontColor;
+        letter-spacing: 2px;
+        font-size: 18px;
+      }
+    }
+  }
+}
 p{
   color: $fontColor;
 }
