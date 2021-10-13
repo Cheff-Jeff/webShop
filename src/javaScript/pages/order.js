@@ -1,6 +1,6 @@
 import '../main';
 import Vue from '../../../node_modules/vue/dist/vue.common.prod';
-
+ 
 new Vue({
   el: '#orderForm',
   data: {
@@ -13,8 +13,8 @@ new Vue({
       'houseNum': null,
       'zipCode': null,
       'city': null,
-      'method': null
-    },
+      'methods': null,
+    },  
     FirstName: null,
     valitFirstName: false,
 
@@ -30,7 +30,7 @@ new Vue({
     Street: null,
     valitStreet: false,
 
-    HouseNum: null,
+    HouseNum: null, 
     valitHouseNum: false,
 
     ZipCode: null,
@@ -38,6 +38,9 @@ new Vue({
 
     City: null,
     valitCity: false,
+
+    PayMethods: null, 
+    valitMethods: false,
   },
   methods: {
     onSubmit: function(e)
@@ -45,6 +48,44 @@ new Vue({
       if(!this.valitFirstName)
       {
         this.checkFirstName(this.FirstName);
+      }
+      if(!this.valitLastName)
+      {
+        this.checkLastName(this.LastName);
+      }
+      if(!this.valitEmail)
+      {
+        this.checkEmail(this.Email);
+      }
+      if(!this.valitPhoneNum)
+      {
+        this.checkPhone(this.PhoneNum);
+      }
+      if(!this.valitStreet)
+      {
+        this.checkSreet(this.Street);
+      }
+      if(!this.valitHouseNum)
+      {
+        this.checkHouseNum(this.HouseNum);
+      }
+      if(!this.valitZipCode)
+      {
+        this.checkZipcode(this.zipCode);
+      }
+      if(!this.valitCity)
+      {
+        this.checkCity(this.City);
+      }
+      if(!this.valitMethods)
+      {
+        this.checkPaymethod(this.PayMethods);
+      }
+      if(!this.valitFirstName || !this.valitLastName || !this.valitEmail || 
+        !this.valitPhoneNum || !this.valitStreet || !this.valitHouseNum || 
+        !this.valitZipCode || !this.valitCity || !this.valitMethods)
+      {
+        e.preventDefault(); 
       }
     },
     checkFirstName: function(name)
@@ -116,7 +157,87 @@ new Vue({
       else
       {
         this.errors['phoneNumber'] = null;
-        this.valitPhoneNum = false;
+        this.valitPhoneNum = true;
+      }
+    },
+    checkSreet: function(street)
+    {
+      if(street == null || street == '' || street == 'null')
+      {
+        this.errors['street'] = 'Street can not be epmty.';
+        this.valitStreet = false;
+      }
+      else if(!this.validateString(street))
+      {
+        this.errors['street'] = `${street} is not a street. A street can only contain letters.`;
+        this.valitStreet = false;
+      }
+      else
+      {
+        this.errors['street'] = null;
+        this.valitStreet = true;
+      }
+    },
+    checkHouseNum: function(num)
+    {
+      if(num == null || num == '' || num == 'null')
+      {
+        this.errors['houseNum'] = 'House number can not be epmty.';
+        this.valitHouseNum = false;
+      }
+      else if(!this.validatePhone(num))
+      {
+        this.errors['houseNum'] = `${num} is not a house number. A house number can only contain numbers.`;
+        this.valitHouseNum = false;
+      }
+      else
+      {
+        this.errors['houseNum'] = null;
+        this.valitHouseNum = true;
+      }
+    },
+    checkZipcode: function(zip)
+    {
+      if(zip == null || zip == '' || zip == 'null')
+      {
+        this.errors['zipCode'] = 'Zipcode can not be epmty.';
+        this.valitZipCode = false;
+      }
+      else
+      {
+        this.errors['zipCode'] = null;
+        this.valitZipCode = true;
+      }
+    },
+    checkCity: function(city)
+    {
+      if(city == null || city == '' || city == 'null')
+      {
+        this.errors['city'] = 'City can not be epmty.';
+        this.valitCity = false;
+      }
+      else if(!this.validateString(city))
+      {
+        this.errors['city'] = `${city} is not a city. A house number can only contain letter.`;
+        this.valitCity = false;
+      }
+      else
+      {
+        this.errors['city'] = null;
+        this.valitCity = true;
+      }
+    },
+    checkPaymethod: function(method)
+    {
+      if(method == null || method == '' || method == 'null')
+      {
+        this.errors['methods'] = 'Payment pethod can not be empty.';
+        this.valitMethods = false;
+      }
+      else
+      {
+        this.errors['methods'] = null;
+        this.valitMethods = true;
       }
     },
     validateString: function(text)

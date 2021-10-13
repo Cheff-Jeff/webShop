@@ -57,16 +57,15 @@ $(document).ready(function() {
 
 const filterComics = (filterArr) => {
   if(filterArr.length > 0)
-  {
-    console.log(filterArr);
+  { 
+    let json_upload = JSON.stringify(filterArr);
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '/src/php/functions/flterComics.php', true);
-    xhr.setRequestHeader("Accept", "application/json");
     xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(json_upload);
     xhr.onload = function()
     {
       console.log(this.responseText);
     }
-    xhr.send(JSON.stringify(filterArr));
   }
 }
