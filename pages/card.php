@@ -89,7 +89,7 @@
                     <p>&euro; <?=$newprice?></p>
                 </div>
                 <div class="btn-wrap">
-                    <a class="main-btn" href="#">Order</a>
+                    <a class="main-btn" href="/order">Order</a>
                 </div>
             </div>
         </div>

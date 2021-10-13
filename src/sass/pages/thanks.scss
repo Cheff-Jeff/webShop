@@ -1,0 +1,30 @@
+@import '../main.scss';
+.banner{
+  background: $mainBG;
+  display: flex;
+  justify-content: space-between;
+  .imgWrap{
+    width: 50%;
+  }
+  .txtWrap{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1{
+      font-family: $Font;
+      color: $fontColor;
+      letter-spacing: 5px;
+      font-size: 45px;
+      margin-left: 45px;
+    }
+  }
+}
+
+p{
+  font-family: $Font;
+    color: $fontColor;
+    letter-spacing: 5px;
+    font-size: 20px;
+    margin-left: 45px;
+}

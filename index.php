@@ -26,6 +26,10 @@ if(strpos($request, '?fbclid')){
     $request = substr($request, 0, strpos($request, "?fbclid"));
 }
 
+if(strpos($request, '?payment_intent')){
+    $request = substr($request, 0, strpos($request, "?payment_intent"));
+}
+
 if(strpos($request, 'comic/')){
     require __DIR__ . '/pages/comic.php';
     die();
@@ -64,6 +68,9 @@ switch ($request) {
         die();
     case '/checkout' :
         require __DIR__ . '/pages/checkout.php';
+        die();
+    case '/thanks' :
+        require __DIR__ . '/pages/thanks.php';
         die();
     case '/wordpress' :
         require __DIR__ . '/pages/home.php';

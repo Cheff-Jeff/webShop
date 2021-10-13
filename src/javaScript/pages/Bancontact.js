@@ -13,7 +13,7 @@ var response = fetch('/src/php/functions/Bancontact.php').then(function(response
           name: "Jenny Rosen"
         }
       },
-      return_url: 'https://example.com/checkout/complete',
+      return_url: 'https://localhost/thanks',
     }
   ).then(function(result) {
     if (result.error) {
