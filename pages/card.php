@@ -22,7 +22,7 @@
         <div class="container-fluid smaller">
             <div class="row">
                 <?php foreach($comics as $comic): ?>
-                    <div class="col-md-12">
+                    <div class="col-md-12 comic-wrap">
                         <div class="comic">
                             <?php
                                 $amount;
@@ -34,19 +34,34 @@
 
                                 $totalPrize = calcTotal(floatval($comic['acf']['price']), floatval($amount), $totalPrize);
                             ?>
-                            <div class="img-wrap">
-                                <img src="<?=$comic['imageURL']['large']?>">
-                            </div>
-                            <div class="details">
-                                <p class="title"><?=$comic['title']['rendered']?></p>
-                                <p class="writer"><?=$comic['acf']['writer']?></p>
-                                <p class="bundle"><?=$comic['acf']['bundel']?></p>
-                            </div>
-                            <div class="amount">
-                                <p><?=$amount?></p>
-                            </div>
-                            <div class="price">
-                                <p><?=str_replace('.',',',$comic['acf']['price'])?></p>
+                            <div class="row">
+                                <div class="col-md-2">
+                                <div class="img-wrap">
+                                    <img src="<?=$comic['imageURL']['large']?>">
+                                </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="details">
+                                        <p class="title"><?=$comic['title']['rendered']?></p>
+                                        <p class="writer"><?=$comic['acf']['writer']?></p>
+                                        <p class="bundle"><?=$comic['acf']['bundel']?></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="shipping-date">
+                                        <p>shipping September 18</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="amount">
+                                        <p>Amount: <?=$amount?></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="price">
+                                        <p>&euro; <?=str_replace('.',',',$comic['acf']['price'])?></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -54,9 +69,31 @@
             </div>
         </div>
     </section>
-    <div class="total">
-        <p><?=str_replace('.',',',$totalPrize)?></p>
-    </div>
+    <section class="pricing">
+        <div class="container-fluid smaller">
+            <div class="price-wrap">
+                <div class="total">
+                    <p>Total price</p>
+                    <p>&euro; <?=str_replace('.',',',$totalPrize)?></p>
+                </div>
+                <div class="shiping-cost">
+                    <p>Shipping costs</p>
+                    <p>&euro; 2.00</p>
+                </div>
+                <div class="new-total">
+                    <?php
+                        $newprice = $totalPrize + 2;
+                        $newprice = str_replace('.',',',$newprice);
+                    ?>
+                    <p>Total</p>
+                    <p>&euro; <?=$newprice?></p>
+                </div>
+                <div class="btn-wrap">
+                    <a class="main-btn" href="#">Order</a>
+                </div>
+            </div>
+        </div>
+    </section>
 <?php endif; ?>
 <?php 
     include_once($root."/pages/templates/bottom.php");
