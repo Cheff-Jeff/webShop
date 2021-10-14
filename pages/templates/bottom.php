@@ -1,7 +1,7 @@
 <footer>
     <div class="inner">
         <a href="/">Home</a>
-        <img src="/src/img/logo.png" alt="logo">
+        <a href="/"><img src="/src/img/logo.png" alt="logo"></a>
         <a href="/comics">Comics</a>
     </div>
 </footer>

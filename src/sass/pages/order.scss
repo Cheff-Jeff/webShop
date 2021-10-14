@@ -1,0 +1,140 @@
+@import '../main.scss';
+@import '../buttons.scss';
+.banner{
+  background: $mainBG;
+  display: flex;
+  justify-content: space-between;
+  .imgWrap{
+    width: 50%;
+  }
+  .txtWrap{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1{
+      font-family: $Font;
+      color: $fontColor;
+      letter-spacing: 5px;
+      font-size: 45px;
+      margin-left: 45px;
+    }
+  }
+}
+
+.form-section{
+  width: 100%;
+  min-height: calc(100vh + 160px);
+  display: block;
+  position: relative;
+  .background{
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  form{
+    .input-wrap{
+      display: block;
+      width: 100%;
+      &.select-input{
+        position: relative;
+        margin-bottom: 50px;
+        label{
+          position: absolute;
+          left: 0;
+          bottom: 5px;
+          font-size: 25px;
+          font-family: $font2;
+          color: $fontColor;
+          letter-spacing: 2px;
+          &.hide{
+            display: none;
+          }
+        }
+        #arrow{
+          position: absolute;
+          right: 0;
+          bottom: 15px;
+          width: 25px;
+          color: $fontColor;
+          transform: rotate(0deg);
+          transition: all .4s ease-in-out;
+        }
+        &:hover{
+          cursor: pointer;
+          #arrow{
+            cursor: pointer;
+            bottom: 0px;
+            transform: rotate(180deg);
+            transition: all .4s ease-in-out;  
+          }
+          label,select{
+            cursor: pointer;
+          }
+        }
+      }
+      input,select{
+        display: block;
+        width: 100%;
+        background: $tp;
+        border: none;
+        border-bottom: 2px solid $fontColor;
+        font-size: 25px;
+        font-family: $font2;
+        outline: none !important;
+        padding-bottom: 5px;
+        margin-top: 10px;
+        letter-spacing: 2px;
+        color: $fontColor;
+        &::placeholder {
+          opacity: 1;
+          color: $fontColor;
+          font-family: $font2;
+          font-size: 25px;
+          letter-spacing: 2px;
+        }
+      }
+      select{
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        appearance:none;
+        option{
+          color: $tripBG;
+          font-size: 25px;
+          letter-spacing: 2px;
+        }
+      }
+    }
+    .btn-wrap{
+      width: 100%;
+      .main-btn{
+        width: 100%;
+        outline: none !important;
+      }
+    }
+    .form-section2{
+      padding-top: 50px;
+    }
+    .error{
+      color: $red;
+      font-family: $font2;
+      font-size: 15px;
+      letter-spacing: 1.3px;
+      display: block;
+      width: 100%;
+      min-height: 21px;
+    }
+  }
+}
+
+footer{
+  z-index: 999;
+  margin-top: -160px;
+  position: relative;
+}

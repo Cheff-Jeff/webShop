@@ -1,6 +1,25 @@
 import '../main';
 import Vue from '../../../node_modules/vue/dist/vue.common.prod';
  
+$(document).ready(function () {
+  if($('#paymethodInput').val() != null && $('#paymethodInput').val() != '')
+  {
+    if(!$('#methodLbl').hasClass('hide'))
+    {
+      $('#methodLbl').addClass('hide');
+    }
+  }
+  $('#paymethodInput').change(function() {
+    if($('#paymethodInput').val() != null && $('#paymethodInput').val() != '')
+    {
+      if(!$('#methodLbl').hasClass('hide'))
+      {
+        $('#methodLbl').addClass('hide');
+      }
+    }
+  });
+});
+
 new Vue({
   el: '#orderForm',
   data: {
