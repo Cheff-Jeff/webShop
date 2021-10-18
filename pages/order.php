@@ -18,10 +18,15 @@
 </section>
 <section class="form-section">
     <div class="background" style="background-image: url(<?=$img2?>);"></div>
-    <div class="container">
+    <div class="container small-page">
         <form action="/src/php/functions/checkOrder.php" id="orderForm" class="order-form" method="POST" @submit="onSubmit">
             <div class="form-section2">
                 <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-wrap">
+                            <h3>Receiver</h3>
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <div class="input-wrap">
                             <input type="text" placeholder="First name"name="FirstName"
@@ -67,6 +72,11 @@
             <div class="form-section2">
                 <div class="row">
                     <div class="col-md-12">
+                        <div class="title-wrap">
+                            <h3>Shipping to</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
                         <div class="input-wrap">
                             <input type="text" placeholder="Street" name="Street"
                                 @keyup="checkSreet(Street)" @blur="checkSreet(Street)" v-model="Street">
@@ -106,6 +116,11 @@
             </div>
             <div class="form-section2">
                 <div class="row">
+                    <div class="col-md-12">	
+                        <div class="title-wrap">
+                            <h3>Payment method</h3>
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <div class="input-wrap select-input">
                             <label id="methodLbl" for="methods">Payment method</label>

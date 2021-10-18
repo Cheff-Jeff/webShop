@@ -11,18 +11,20 @@
     include_once($root."/pages/templates/top.php");
 ?>
 <?php if($paymentMethod == 'card'): ?>
-    <form id="payment-form">
-        <div id="card-element"><!--Stripe.js injects the Card Element--></div>
-        <button id="submit">
-        <div class="spinner hidden" id="spinner"></div>
-        <span id="button-text">Pay now</span>
-        </button>
-        <p id="card-error" role="alert"></p>
-        <p class="result-message hidden">
-        Payment succeeded, see the result in your
-        <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
-        </p>
-    </form>
+    <section class="card-form">
+        <form id="payment-form">
+            <div id="card-element"><!--Stripe.js injects the Card Element--></div>
+            <button id="submit">
+            <div class="spinner hidden" id="spinner"></div>
+            <span id="button-text">Pay now</span>
+            </button>
+            <p id="card-error" role="alert"></p>
+            <p class="result-message hidden">
+            Payment succeeded, see the result in your
+            <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
+            </p>
+        </form>
+    </section>
     <script src="/dist/js/card.js"></script>
 <?php elseif($paymentMethod == 'Bancontact'): ?>
     <p>One moment please. We will redirect you bancontact.</p>
